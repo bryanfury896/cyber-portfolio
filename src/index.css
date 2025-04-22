@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom styles */
+body {
+  font-family: 'Courier New', monospace;
+}
+.glitch {
+  position: relative;
+  color: #fff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 3rem;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.glitch::before {
+  animation: glitchTop 1s infinite linear alternate-reverse;
+  color: #0ff;
+  z-index: -1;
+}
+.glitch::after {
+  animation: glitchBottom 1s infinite linear alternate-reverse;
+  color: #f0f;
+  z-index: -2;
+}
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  5% { clip: rect(0, 9999px, 10px, 0); }
+  10% { clip: rect(0, 9999px, 0, 0); }
+  15% { clip: rect(0, 9999px, 12px, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
+@keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  5% { clip: rect(10px, 9999px, 20px, 0); }
+  10% { clip: rect(0, 9999px, 0, 0); }
+  15% { clip: rect(8px, 9999px, 18px, 0); }
+  100% { clip: rect(0, 9999px, 0, 0); }
+}
