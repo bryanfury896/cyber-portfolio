@@ -1,20 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaTools } from 'react-icons/fa';
+import Tools from './Tools';  // Import Tools component
+import { TypeAnimation } from 'react-type-animation';
+import { useEffect } from 'react';
 
 const skills = [
   'Red Teaming',
   'Penetration Testing',
   'Social Engineering',
   'OSINT',
-  'Exploit Development'
+  'Zeroday Research'
 ];
 
 const tools = [
-  { name: 'Wireshark', icon: '/icons/wireshark.png' },
-  { name: 'Metasploit', icon: '/icons/metasploit.png' },
-  { name: 'Nmap', icon: '/icons/nmap.png' },
-  { name: 'Burp Suite', icon: '/icons/burp.png' }
+  { name: 'Burp Suite', icon: '/images/tools/burpsuite.svg' },
+  { name: 'Kali Linux', icon: '/images/tools/kalilinux.svg' },
+  { name: 'Linux', icon: '/images/tools/linux.svg' },
+  { name: 'Metasploit', icon: '/images/tools/metasploit.svg' }
 ];
 
 const About = () => {
@@ -25,26 +28,30 @@ const About = () => {
       whileInView={{ opacity: 1 }} 
       transition={{ duration: 1 }}
     >
-      <h2 className="text-3xl font-bold mb-4">About Me</h2>
-      <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-        I’m a cybersecurity enthusiast specializing in red teaming and penetration testing. I enjoy breaking things to make them better.
-      </p>
-      <div className="flex justify-center gap-4 flex-wrap mb-8">
-        {skills.map((skill, index) => (
-          <span key={index} className="bg-gray-700 px-4 py-2 rounded-lg text-sm hover:bg-gray-600">
-            {skill}
-          </span>
-        ))}
-      </div>
-      <h3 className="text-xl font-semibold mb-4">Tools I Use</h3>
-      <div className="flex justify-center gap-6 flex-wrap">
-        {tools.map((tool, index) => (
-          <div key={index} className="w-20 flex flex-col items-center">
-            <img src={tool.icon} alt={tool.name} className="w-12 h-12 object-contain mb-2" />
-            <span className="text-xs text-gray-300">{tool.name}</span>
-          </div>
-        ))}
-      </div>
+      <h2 className="text-3xl font-bold mb-4 text-green-400">About Me</h2>
+
+<p className="text-gray-400 text-xl max-w-2xl mx-auto mb-4">
+  With over six years of hands-on experience in cybersecurity, I have had the privilege of working with clients across various industries, including government sectors. My expertise spans a wide range of domains, from web application penetration testing to comprehensive Red Teaming, Zero-Day Research, and bug bounty programs on platforms such as HackerOne and Bugcrowd. I am deeply engaged in the open-source community, where I contribute to enhancing security practices and share knowledge.
+</p>
+
+<p className="text-green-400 text-xl font-semibold animate-pulse max-w-2xl mx-auto mb-8">
+  I enjoy breaking things to make them better.
+</p>
+
+<div className="flex justify-center gap-4 flex-wrap mb-8">
+  {skills && skills.length > 0 ? (
+    skills.map((skill, index) => (
+      <span
+        key={index}
+        className="bg-gray-700 px-4 py-2 rounded-lg text-base hover:bg-gray-600 transition"
+      >
+        {skill}
+      </span>
+    ))
+  ) : (
+    <p className="text-gray-500">No skills available</p>
+  )}
+</div>
     </motion.section>
   );
 };

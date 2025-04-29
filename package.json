@@ -2,6 +2,9 @@
   "name": "cyber-portfolio",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://bryanfury896.github.io/cyber-portfolio",
+  "description": "A personal portfolio website showcasing my skills and projects in cybersecurity.",
+  "author": "Bryan Fury",
   "dependencies": {
     "cyber-portfolio": "file:",
     "emailjs-com": "^3.2.0",
@@ -14,7 +17,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   },
   "browserslist": {
     "production": [
