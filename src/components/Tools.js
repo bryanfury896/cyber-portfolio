@@ -1,29 +1,38 @@
 import React from 'react';
+import burpSuiteIcon from '../assets/burpsuite.svg';
+import kaliLinuxIcon from '../assets/kalilinux.svg';
+import hackadayIcon from '../assets/hackaday.svg';
+import metasploitIcon from '../assets/metasploit.svg';
+import testingLibraryIcon from '../assets/testinglibrary.svg';
+import wiresharkIcon from '../assets/wireshark.svg';
+import '../index.css'; // Ensure this is imported for styles
 
 const tools = [
-  { name: 'Burp Suite', icon: '/icons/burpsuite.svg' },
-  { name: 'Kali Linux', icon: '/icons/kalilinux.svg' },
-  { name: 'Hackaday',      icon: '/icons/hackaday.svg' },
-  { name: 'Metasploit', icon: '/icons/metasploit.svg' },
-  { name: 'Testing Library', icon: '/icons/testinglibrary.svg' },
-  { name: 'Wireshark', icon: '/icons/wireshark.svg' }
-
+  { name: 'Burp Suite', icon: burpSuiteIcon },
+  { name: 'Kali Linux', icon: kaliLinuxIcon },
+  { name: 'Hackaday', icon: hackadayIcon },
+  { name: 'Metasploit', icon: metasploitIcon },
+  { name: 'Testing Library', icon: testingLibraryIcon },
+  { name: 'Wireshark', icon: wiresharkIcon }
 ];
-
 
 const Tools = () => {
   return (
-    <section className="py-16 bg-gray-900 text-white text-center">
-      <h3 className="text-4xl font-bold mb-6 text-green-400">Tools I Use</h3>
-      <div className="flex justify-center gap-6 flex-wrap">
+    <section className="py-16 bg-gradient-to-b from-gray-800 to-black text-white text-center">
+      <h3 className="text-4xl font-bold mb-12 text-green-400">Tools I Use</h3>
+      <div className="bento-grid">
         {tools.map((tool, index) => (
-          <div key={index} className="w-24 flex flex-col items-center">
+          <div
+            key={index}
+            className="bento-card"
+            style={{ '--card-index': index }} // Set custom CSS property
+          >
             <img 
               src={tool.icon} 
               alt={tool.name} 
-              className="w-16 h-16 object-contain mb-2 transition-transform transform hover:scale-110"
+              className="bento-icon"
             />
-            <span className="text-xs text-gray-300">{tool.name}</span>
+            <span className="bento-label">{tool.name}</span>
           </div>
         ))}
       </div>

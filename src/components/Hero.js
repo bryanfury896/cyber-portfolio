@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 const Hero = () => {
   return (
     <motion.section 
-      className="h-screen flex items-center justify-center bg-black text-white text-center -mt-10"
+      className="hero text-center"
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       transition={{ duration: 1 }}

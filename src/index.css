@@ -5,6 +5,11 @@
 /* custom styles */
 body {
   font-family: 'Courier New', monospace;
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .glitch {
   position: relative;
@@ -82,4 +87,392 @@ body {
   height: 64px;
   margin-bottom: 8px;
   object-fit: contain;
+}
+
+.tool-container {
+  position: relative;
+  width: 6rem; /* Adjust size as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-container:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.6); /* Green glow effect */
+}
+
+.tool-container img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.tool-container span {
+  font-size: 0.75rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  padding: 2rem;
+}
+
+/* Bento Card */
+.bento-card {
+  position: relative;
+  background: linear-gradient(145deg, #1f2937, #374151);
+  border-radius: 1rem;
+  width: 200px; /* Fixed width */
+  height: 250px; /* Fixed height */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.6); /* Glowing effect */
+}
+
+/* Add animation to the tools section */
+.bento-grid .bento-card {
+  animation: pulse 6s infinite ease-in-out;
+  animation-delay: calc(var(--card-index) * 0.5s); /* Staggered animation */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.6); /* Glowing effect */
+  }
+}
+
+/* Icon Styling */
+.bento-icon {
+  width: 80px; /* Fixed size for icons */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bento-card:hover .bento-icon {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.8)); /* Glowing icon effect */
+}
+
+/* Label Styling */
+.bento-label {
+  font-size: 1rem;
+  color: #e5e7eb;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Courier New', monospace;
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Responsive Grid */
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #1e293b;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.navbar ul li {
+  margin: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: #1e293b;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.hero {
+  min-height: 100vh; /* Full screen height */
+  background: linear-gradient(135deg, #111111, #080a0c); /* Gradient background */
+  background-size: cover; /* Ensure the background covers the entire section */
+  background-position: center; /* Center the background */
+  background-repeat: no-repeat; /* Prevent background repetition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  background: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.footer p {
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 0.875rem;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  max-width: 800px; /* Limit the width for larger screens */
+  margin: 0 auto; /* Center the content */
+}
+
+.about-section p {
+  font-size: 1.25rem; /* Default font size for larger screens */
+  line-height: 1.8;
+  color: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .about-section p {
+    font-size: 1rem; /* Smaller font size for mobile screens */
+    line-height: 1.6;
+  }
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+  justify-items: center;
+  padding: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  background: linear-gradient(145deg, #1f2937, #374151);
+  border-radius: 1rem;
+  width: 100;
+  height: 100;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space between title, description, and tools */
+  align-items: center;
+  overflow: hidden; /* Prevent content overflow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px 5px rgba(0, 255, 0, 0.6); /* Glowing effect */
+}
+
+/* Title Styling */
+.project-card h3 {
+  font-size: 1.25rem;
+  color: #38bdf8; /* Light blue */
+  text-align: center;
+  margin-bottom: 0.5rem;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for long titles */
+}
+
+/* Description Styling */
+.project-card p {
+  font-size: 0.9rem; /* Slightly smaller font size */
+  color: #e5e7eb;
+  text-align: center;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for long descriptions */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Tools List Styling */
+.project-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.project-card ul li {
+  background: #374151;
+  color: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+}
+/* Optional: Add custom styles for the project cards */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.2);
 }

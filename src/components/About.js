@@ -13,12 +13,6 @@ const skills = [
   'Zeroday Research'
 ];
 
-const tools = [
-  { name: 'Burp Suite', icon: '/images/tools/burpsuite.svg' },
-  { name: 'Kali Linux', icon: '/images/tools/kalilinux.svg' },
-  { name: 'Linux', icon: '/images/tools/linux.svg' },
-  { name: 'Metasploit', icon: '/images/tools/metasploit.svg' }
-];
 
 const About = () => {
   return (
