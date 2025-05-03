@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/cyber-portfolio/static/css/main.93c2f3ba.css",
-    "main.js": "/cyber-portfolio/static/js/main.3249be3f.js",
+    "main.css": "/cyber-portfolio/static/css/main.9da5dd98.css",
+    "main.js": "/cyber-portfolio/static/js/main.b95fef25.js",
+    "static/media/testinglibrary.svg": "/cyber-portfolio/static/media/testinglibrary.00fcf44a7bca51e94d0ff32650513fc7.svg",
+    "static/media/hackaday.svg": "/cyber-portfolio/static/media/hackaday.4d5be6b05a7aa7895f88318743d58b00.svg",
+    "static/media/kalilinux.svg": "/cyber-portfolio/static/media/kalilinux.8d18bb33ec316ec75bf22b1ecf1c764b.svg",
+    "static/media/metasploit.svg": "/cyber-portfolio/static/media/metasploit.645ff35c18b28cd013c4d835a9afd6d3.svg",
+    "static/media/wireshark.svg": "/cyber-portfolio/static/media/wireshark.a7cacd15003fd7a4be92e0829f15b63f.svg",
     "index.html": "/cyber-portfolio/index.html",
-    "main.93c2f3ba.css.map": "/cyber-portfolio/static/css/main.93c2f3ba.css.map",
-    "main.3249be3f.js.map": "/cyber-portfolio/static/js/main.3249be3f.js.map"
+    "static/media/burpsuite.svg": "/cyber-portfolio/static/media/burpsuite.a91633e7f5ca10c63d8152984538cf72.svg",
+    "main.9da5dd98.css.map": "/cyber-portfolio/static/css/main.9da5dd98.css.map",
+    "main.b95fef25.js.map": "/cyber-portfolio/static/js/main.b95fef25.js.map"
   },
   "entrypoints": [
-    "static/css/main.93c2f3ba.css",
-    "static/js/main.3249be3f.js"
+    "static/css/main.9da5dd98.css",
+    "static/js/main.b95fef25.js"
   ]
 }
